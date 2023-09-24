@@ -1,0 +1,92 @@
+package p2;
+import java.util.Objects;
+public class Food implements Comparable <Food> {
+private String foodItems;
+private String category;
+private int cost;
+public Food() {
+}	
+public Food(String foodItems, String category, int cost) {
+super();
+this.foodItems = foodItems;
+this.category = category;
+this.cost = cost;
+}
+public String getFoodItems() {
+ return foodItems;
+
+	}
+public void setFoodItems(String foodItems) {
+
+		this.foodItems = foodItems;
+
+	}
+public String getCategory() {
+
+		return category;
+
+	}
+
+public void setCategory(String category) {
+
+		this.category = category;
+
+	}
+
+ 
+public int getCost() {
+
+		return cost;
+
+	}
+
+ public void setCost(int cost) {
+
+		this.cost = cost;
+
+	}
+
+@Override
+
+	public String toString() {
+
+		return "Food [foodItems=" + foodItems + ", category=" + category + ", cost=" + cost + "]";
+
+	}
+
+@Override
+
+public int hashCode() {
+
+		return category.length()+category.length()+cost;
+
+	}
+
+ @Override
+public boolean equals(Object obj) {
+if (obj instanceof Food) {
+Food food = (Food)obj;
+           boolean a = food.foodItems.equals(this.getFoodItems());
+           boolean b = food.cost==this.cost;
+           boolean c = food.category.equals(this.getCategory());
+           return a && b && c ;
+
+}
+return false;
+
+		}
+
+@Override
+public int compareTo(Food food) {
+
+	 return this.getCategory().compareTo(food.getCategory()) ;
+
+	}
+
+ 
+
+}
+
+
+
+

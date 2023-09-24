@@ -1,0 +1,44 @@
+package p2;
+import java.util.ArrayList;
+import java.util.TreeSet;
+import java.util.Collections;
+import java.util.List;
+public class FoodStore {
+public static void main(String[] args) {
+TreeSet<Food> allFoods= new TreeSet<>();
+        Food f1 = new Food ("Idli","Tiffins",50);
+		Food f2 = new Food ("Chicken","Non-veg",30);
+		Food f3 = new Food ("Sambar","Veg",25);
+        allFoods.add(f1);
+		allFoods.add(f2);
+		allFoods.add(f3);
+
+		for (Food food : allFoods) {
+			System.out.println(food);
+		}
+
+		System.out.println("Foods (Low to High)");
+		System.out.println("Foods (High to Low)");
+
+		}
+
+	  public static void getFoodsBasedOnCostHighToLow(TreeSet<Food> allFoods)
+	   {
+		// Step1 -> convert set to List
+		List<Food> tempList = new ArrayList<>();// or pass as constructor argument
+		tempList.addAll(allFoods);
+
+		// Step 2-> create Comprator class Object
+		SortFoodBasedOnCostHighToLow sortCode = new SortFoodBasedOnCostHighToLow();
+
+		Collections.sort(tempList, sortCode);
+
+		for (Food food : tempList) {
+			System.out.println(food);
+		}
+
+	}
+}
+
+
+

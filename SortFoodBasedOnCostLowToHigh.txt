@@ -1,0 +1,10 @@
+package p2;
+import java.util.Comparator;
+public class SortFoodBasedOnCostLowToHigh implements Comparator <Food> {
+@Override
+public int compare(Food a1, Food a2) {
+    return a1.getCost() - a2.getCost();
+
+	}
+}
+
